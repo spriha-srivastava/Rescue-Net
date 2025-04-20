@@ -64,10 +64,10 @@ export const register = async (req, res, next) => {
     });
   } catch (error) {
     console.log(error);
+    next(error);
   }
 
   // Pass other errors to the error handling middleware
-  next(error);
 };
 
 export const login = async (req, res, next) => {
